@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        /*#father{
+            overflow: hidden;
+        }*/
+        
+        #div-1{
+            width: 200px;
+            height: 100px;
+            background: #00f;
+            float: left;
+        }
+        #div-2{
+            width: 200px;
+            height: 100px;
+            background: #f00;
+            float: left;
+        }
+        .clearfix::after{
+            content:" ";
+            display: block;
+            clear: both;
+        }
+        table th,td{
+            border:#0f0 solid 2px;
+        padding: 10px 10px;
+        }
+        #111{
+            outline: none;
+        }
+        #sanjiao{
+            width: 0px;
+            height: 0px;
+            /* background: #f00; */
+         
+
+
+            border-top:100px solid #000;
+            border-right:100px solid #00f;
+            border-bottom:100px solid #0f0;
+            border-left:100px solid #0ff; 
+        }
+        
+        .main:hover .sub-main{
+            display: block;
+        }
+        .sub-main{
+            display: none;
+        }
+        .transform{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            /*transform: rotate(-90deg);*/
+           /*transform: translateX(1000px);*/
+           transform: skew(45deg);
+    </style>
+</head>
+<body>
+    
+
+    <div id="father"  class="clearfix">
+        <div id="div-1">
+            1
+        </div>
+        <div id="div-2">
+            2
+        </div>
+     
+    </div>
+    <p>23333333333333</p>
+    <table>
+        <tr>
+            <th>
+                姓名
+            </th>
+            <th>
+                年龄
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+                小红
+            </td>
+            <td>
+                19
+            </td>
+        </tr>
+    </table>
+    <input type="text" name="11" id="111">
+
+    <div id="sanjiao"></div>
+    <ul>
+        <li  class="main">
+            <a href="#">标题</a>
+            <ul>
+                <li class="sub-main">
+                    我套你猴子
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <div class="transform">
+        套你猴子
+    </div>
+     
+    
+</body>
+</html>

@@ -1,0 +1,10 @@
+1.iconfont 下载
+2. woff  ttf  svg  eot 字体文件 放到font文件夹下
+3. iconfont.css  放到css文件夹下
+4. iconfont.css引入到页面中
+5. 参照 demo_fontclass.html 里的demo
+
+
+
+
+
