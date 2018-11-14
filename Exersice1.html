@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div1 p[class=aa]{
+            background: #f00;
+        }
+        .first li:first-child{
+            color:#ff0036;
+  
+        }
+        .hover{
+            list-style: none;
+        }
+        
+        .hover :nth-child(2n):hover{
+            color: #ff0036;
+        }
+        .hover :nth-child(2n+1):hover{
+            color: blue;
+        }
+        /*input[type=checkbox]:checked{
+            transform: translateX(50px);
+        }*/
+         input[name=check1]:checked{
+            transform: translateX(50px);
+        }
+        #overflow{
+            height: 20px;
+            width: 150px;
+            border: 1px solid #ff0036;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .div1{
+            height: 20px;
+            background:rgba(0,223, 0, 0.6);
+            }
+        #div2{
+            height: 20px;
+            background: green;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1>1111</h1>
+        <p class="aa">222222</p>
+        <p class="aa bb">33333</p>
+        <p class="aa bb cc">44444</p>
+    </div>
+    <ul class="first">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <div>
+        <ul class="hover">
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+            <li>4444</li>
+            <li>555555</li>
+            <li>6666</li>
+            <li>77777clearlove7</li>
+            <li>888</li>
+            <li>99999</li>
+        </ul>
+        <!-- <input type="button" value="">click -->
+        <input type="checkbox" name="check1" id="">111
+        <input type="checkbox" name="check1" id="">222
+        <input type="checkbox" name="check1" id="">333
+        <button disabled>click</button>
+        <button>server</button>
+    </div>
+
+    <div id="overflow">
+        hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    </div>
+    <div class="div1">
+        1111111111111111111111
+    </div>
+    <div id="div2">
+        222222222222222
+    </div>
+</body>
+</html>
