@@ -6,10 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .main-content{
+            display: flex;
+            /*flex-direction: column;*/
+            background: grey;
+            height: 500px;
+        }
+        .inner-content1{
+           /* height: 100px;*/
+            background: #ff0036;
+            flex: 2;
+        }
+        .inner-content2{
+           /* height: 100px;*/
+            background: orange;
+            flex: 5;
+        }
     </style>
 </head>
 <body>
-    <div></div>
+    <div class="main-content">
+        <div class="inner-content1"></div>
+        <div class="inner-content2"></div>
+    </div>
 </body>
 </html>
