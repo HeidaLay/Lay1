@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*var str1="String";
+        console.log(str1.length);
+        console.log(Math.pow(2,3));   
+        
+        var today=new Date();
+        var year=today.getFullYear();
+        if((year%4==0&&year%100!=0)||year%400==0){
+            document.write("这是闰年");
+        }
+        else{
+            document.write("这不是闰年");
+        }
+        var result=prompt("请输入x的值:");
+        function f(x){
+            return 4*x*x+3*x+2;
+        }
+        alert(f(result));*/
+        /*var a1=prompt("请输入x的值:");
+        var a2=prompt("请输入y的值:");
+        function _Min(x,y){
+            if(x<y){
+                return x;
+            }
+            else{
+                return y;
+            }
+        }
+        alert(_Min(a1,a2));*/
+        var k=0;
+        for(var i=100;i<=1000;i++)
+        {    
+            var ok=0;
+            for(var j=2;j<i;j++){
+                if(i%j==0)
+                ok=1;
+            }
+            if(ok==0){
+                document.write(i+",");
+                k++;
+                if(k%6==0){
+                    document.write("<br/>");
+                }
+            }
+        }
+       /* var j=0;
+        for(var i=100;i<=1000;i++){
+            if(i%2!=0&&i%3!=0&&i%5!=0&&i%7!=0)
+            {
+                document.write(i+",");
+                j++;
+                if(j%6==0)
+                {
+                    document.write("<br/>");
+                }
+            }
+        }*/
+        //5.	编写一个非递归函数factorial(n)，计算12!-10!的结果。
+        //6.	编写一个带一个参数（指定显示多少层星号“*”的函数，它在页面止输出的一个5层星号“*”图案类似。其中，每行的星号“*”之间有一个空格间隔。
+        var result1=prompt("请输入n的值:");
+        
+        /*var result2=prompt("请输入n的值:");*/
+        function factorial(n)
+        {   
+            var sum=1;
+            for(var i=1;i<=n;i++)
+            {   
+                sum*=i;
+            } 
+
+            return sum;
+            /*document.write(sum*=i);*/
+        }
+        alert(factorial(result1));
+        /*document.write(factorial(12));
+        document.write('<br/>');
+        document.write(factorial(10));*/
+        /*function star(){
+            for(var i=1;i<=5;i++)   
+                for(var j=1;5-i;j++)
+            {
+
+            }
+        }*/
+    </script>
+</body>
+</html>
