@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1 1 2 3 5 8 13 21
+        //斐波纳契（Fibonacci）数列的第一项是1，第二项是1，以后各项都是前两项的和。试用递归函数和非递归函数各编写一个程序，求斐波纳契数列第N项的值。
+       /* function fib1(n){
+            if(n<=2){
+                return 1;
+            }
+            else{
+                return fib1(n-1)+fib1(n-2);       //递归
+            }
+        }
+        console.log(fib1(8));
+        function fib2(n){
+            if(n<=2){
+                return 1;
+            }
+            var f1=1,f2=1,temp;
+            for(var i=3;i<=n;i++)                  //非递归
+            {       
+                temp=f1+f2; 
+                f1=f2;      
+                f2=temp;    
+            }
+            return f2;
+        }
+        console.log(fib2(5));*/
+       //9.	利用全局变量和函数，设计模拟幸运数字机游戏。设卒运数字为8，每次由计算机随机产生3个1-9之间(包括1和9）的随机数，
+       //当这3个随机数中有一个数字为8时，就算赢了一次，要求利用函数计算获胜率。
+       /* var win=0;
+        var total=0;
+        var str="";
+        function play()
+        {
+            total++;
+            //str="";
+            var a=Math.floor(Math.random()*9+1);
+            var b=Math.floor(Math.random()*9+1);  //0-1 0-9 1-10 但不包括10
+            var c=Math.floor(Math.random()*9+1);
+            str=a+" "+b+" "+c;
+            if(a==8||b==8||c==8)
+            {
+                win++;
+                str=str+"\n"+"WIN";
+            }
+            else{
+                str=str+"\n"+"LOSE";
+            }
+            str=str+"\n胜率"+(win/total*100).toFixed(2)+"%";         //toFixed(2) 小数点后面保留位数
+        }
+        play();
+        while(confirm(str)){
+            play();
+        }
+        function _random(){
+            var a=Math.floor(Math.random()*101);
+            console.log(a);
+        }
+        _random();*/
+        //4.编制一个从字符串中收集数字字符（"0"',"1"，…"9"）的函数CollectDigits(s)，
+        //    它从字符串s中顺序取出数字，并且合并为一个独立的字符串作为函数的返回值。
+        //    例如函数调用CollectDigits("1abc23def4"）的返回值是字符串"1234"
+
+        function CollectDigits(str)
+        {   
+            var result="";
+            for(var i=0;i<str.length;i++)
+            {   
+                var x=str.charAt(i);
+                if(x>=0&&x<=9)
+                {
+                   result+=x;
+                }
+            }return result;
+         }
+        console.log(CollectDigits("sdw1rr5sdds6ffdsf8"));
+        //5.编制一个将两个字符串交叉合并的函数Merge(s1,s2)，
+        //例如Merge("123","abc"）的返回结果是"1a2b3c"，
+        //如果两个字符串的长度不同，那么就将多余部分直接合并到结果字符串的末尾，
+        //如Merge("123456",''abc''）的返回结果是”1a2b3c456”
+        function Merge(s1,s2){
+            var Max=(s1.length,s2.length);
+            for(var i=0;i<Max.length;i++)
+            {
+                if()
+            }
+        }
+        console.log(Merge("123456","abc"));
+        function DayOfYear(year,month,day){
+
+        }
+        
+    </script>
+</body>
+</html>
