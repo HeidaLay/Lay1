@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="click">
+        点击
+    </button>
+    <button id="Stop">
+        Stop
+    </button>
+    <h1>hhhh</h1>
+    <h1>hhhh</h1>
+    <h1 class="a">hhhh</h1>
+    <h1 class="a b">hhhh</h1>
+    <h1>hhhh</h1>
+    <h1 class="a">hhhh</h1>
+    
+    <script>
+        /*var obtn=document.getElementById("click");
+        obtn.onclick=function(){
+            window.scrollTo(0,500);
+        }*/
+       /* function getElementByClass(clsName)
+        {
+            var result=[];
+            var allEle=document.getElementsByTagName("*");
+            for(var i=0;i<allEle.length;i++)
+            {   
+                var arr=allEle[i].className.split(" ");
+               for(var k=0;k<arr.length;k++)
+               {
+                if(arr[k]==clsName)
+                {
+                    result.push(allEle[i]);
+                }
+               }
+            }
+            return result;
+        }
+        var a2=getElementByClass("a");
+        for(var j=0;j<a2.length;j++)
+        {
+            a2[j].style.background="red";
+        }*/
+        function getElementByClass(clsName){
+            var result=[];
+           var a1= document.getElementsByTagName("*");
+           for(var i=0;i<a1.length;i++)
+           {
+               var a2=a1[i].className.split(" ");
+               for(var k=0;k<a2.length.k++;)
+               {
+                   if(a2[k]==clsName)
+                   {
+                       result.push(a1[i]);
+                   }
+               }
+               
+           }return  result;
+        }
+            var a2=getElementByClass("a");
+            for(var j=0;j<a2.length;j++)
+            {
+                a2[j].style.background="blue";
+            }
+    </script>
+</body>
+</html>
