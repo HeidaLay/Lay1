@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #div1{
+        width: 100px;
+        height: 200px;
+        background:greenyellow;
+        display: none;
+        position: absolute;
+        font-size: 18px;
+        border: 1px solid black;
+        border-radius: 8px;
+        text-align: center;
+        line-height: 51px;
+        }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+    }
+    ul li:hover{
+        background: #f2f2f2;
+    }
+</style>
+<body>
+    <div id="div1">
+            <ul>
+                <li>1111</li>
+                <li>2222</li>
+                <li>3333</li>
+                <li>4444</li>
+            </ul>
+    </div>
+    <script>
+        
+        var a1=document.getElementById("div1");
+        document.oncontextmenu=function(e){
+            
+            a1.style.left=e.clientX+"px";
+            a1.style.top=e.clientY+"px";
+            a1.style.display="block";
+            return false;         /*阻止默认行为  标准浏览器下 阻止默认行为 e.preventDefault(); ie浏览器 e.returnValue=false;*/
+        }
+        var a2=document.getElementsByTagName("li");
+        for(var i=0;i<a2.length;i++){
+            a2[i].onclick=function(){
+                console.log(this.innerHTML);
+                a1.style.display="none";
+            }
+        }
+        
+    </script>
+</body>
+</html>
