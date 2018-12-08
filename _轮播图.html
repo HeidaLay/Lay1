@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #container img{
+            display: none;
+        }
+        #container .active{
+            display: block;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            width: 1150px;
+            height: 500px;
+            position: relative;
+            margin: 100px auto;
+        }
+        #container #inner-right{
+            position: absolute;
+            right: 4px;
+            bottom: 22px;
+            
+        }
+        #container #inner-right li{
+            width: 20px;
+            height: 20px;
+            float: left;
+            font-size: 12px;
+            color:white;
+            background:rgba(0, 0, 0, 0.5);
+            margin-right: 5px;
+            border-radius: 2px;
+            text-align: center;
+            line-height: 20px;
+        }
+        #container #inner-right .selected{
+            background: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="inner-left">
+            <img class="active"src="../Lay1/Tmall/image/img1.jpg" alt="">
+            <img src="../Lay1/Tmall/image/img2.jpg" alt="">
+            <img src="../Lay1/Tmall/image/img2.jpg" alt="">
+            <img src="../Lay1/Tmall/image/img2.jpg" alt="">
+            <img src="../Lay1/Tmall/image/img1.jpg" alt="">
+        </div>
+        <ul id="inner-right">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script>
+        var a1=document.getElementById("inner-left");
+        var a2=a1.getElementsByTagName("img");
+        var a3=document.getElementById("inner-right");
+        var a4=a3.getElementsByTagName("li");
+        for(var i=0;i<a4.length;i++)
+        {
+            a4[i].index=i;
+            a4[i].onclick=function(){
+                for(var j=0;j<a4.length;j++){
+                a4[j].className="";
+                a2[j].className="";
+                }
+            
+            this.className="selected";
+            a2[this.index].className="active";
+            }
+        }
+    </script>
+</body>
+</html>
