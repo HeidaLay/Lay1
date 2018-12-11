@@ -426,25 +426,39 @@ li{
 .summer1 a{
     color: #e54077;
 }
-.slide-box{
+#slide-box{
     width: 1230px;
     height: 500px;
     position: relative;
 }
-.slide-box img{
+#slide-box img{
     position: absolute;
     width: 1230x;
     height: 500px;
     left: 50px;
+    display: none;
 
 }
-.slide-box .img-box{
+#slide-box .active{
+    display: block;
+}
+#slide-box #img-box{
     position: absolute;
-    background: yellow;
+    
     width: 200px;
     bottom: 50px;
     left:50%;
     transform: translateX(-50%);
+    
+}
+#slide-box #img-box li{
+    float: left;
+    margin-right: 5px;
+    background: yellow;
+    cursor: pointer;
+}
+#slide-box #img-box .selected{
+    background: orangered;
 }
 .cate-right img{
     width: 90px;

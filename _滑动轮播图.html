@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         *{
+            padding: 0;
+            margin: 0;
+        }
+        #container{
+            width: 1150px;
+            height: 500px;
+            position: relative;
+            margin: 100px auto;
+            cursor: pointer;
+            overflow: hidden;
+            
+        }
+        #container #inner-left{
+            width: 6000px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            cursor: pointer;
+            transition: left 2s linear;
+        }
+        #container #inner-left img{
+            display: block;
+            float: left;
+            
+            
+        }
+        #container .active{
+            display: block;
+        }
+        li{
+            list-style: none;
+        }
+        #container #inner-right{
+            position: absolute;
+            left:20px;
+            top:27px;
+            
+        }
+        #container #inner-right li, #container #arrow li{
+            width: 20px;
+            height: 20px;
+            float: left;
+            font-size: 12px;
+            color:white;
+            background:rgba(0, 0, 0, 0.5);
+            margin-right: 5px;
+            border-radius: 2px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+       #container #inner-right .selected{
+            background: orangered;
+        }
+        #arrow {
+            position: absolute;
+            left:20px;
+            top:450px;
+        }
+    </style>
+</head>
+<body> 
+    <div id="container">
+        
+        <div id="inner-left">
+            <img class="active"src="../Lay1/Tmall/image/img1.jpg" alt="">
+            <img src="../Lay1/Tmall/image/img2.jpg" alt="">
+            <img src="../Lay1/Tmall/image/img3.jpg" alt="">
+            <img src="../Lay1/Tmall/image/img4.jpg" alt="">
+            <img src="../Lay1/Tmall/image/img2.jpg" alt="">
+        </div>
+    
+    <ul id="inner-right">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    <ul id="arrow">
+            <li id="arrow-left-select">&lt;</li>
+            <li id="arrow-right-select">&gt;</li>
+        </ul></div>
+        <script>
+            var a1=document.getElementById("inner-right");
+            var a2 = a1.getElementsByTagName("li");
+            var a3=document.getElementById("inner-left");
+            var a4=a3.getElementsByClassName("active");
+            var inner_left=document.getElementById("inner-left");
+            var idx=0;
+            var b1=document.getElementById("arrow-left-select");
+            var b2=document.getElementById("arrow-right-select");
+            var iNow=0;
+            var timer;
+            for(var i=0;i<a2.length;i++){
+                a2[i].index=i;
+                a2[i].onclick=function(){
+                    change(this.index);
+                    iNow++;
+                }
+            }
+
+            function change(idx){ 
+                 for(var j=0;j<a2.length;j++)
+                        {
+                            a2[j].className="";
+                            
+                        }
+                        a2[idx].className="selected";
+                        inner_left.style.left=(-1150)*idx+"px";
+                    
+                }
+            b1.onclick=function(){
+                iNow--;
+                if(iNow==-1)
+                {
+                    iNow=a2.length;
+                }
+                change(iNow);
+            }
+            b2.onclick=function(){
+                iNow++;
+                if(iNow==5)
+                {
+                    iNow=0;
+                }
+                change(iNow);
+            }
+            run();
+            inner_left.onmouseover=function(){
+                clearInterval(timer);
+            }
+            inner_left.onmousedown=function(){
+                run();
+            }
+            var run=function(){
+               timer= setInterval(function() {
+                    b2.onclick();
+                }, 2000);
+            }
+            
+        </script>
+</body>
+</html>

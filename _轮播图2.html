@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #main {
+            width: 1150px;
+            height: 500px;
+            position: relative;
+            margin: 100px auto;
+            cursor: pointer;
+            overflow: hidden;
+
+        }
+
+        #container #inner-left img {
+            display: block;
+            float: left;
+
+
+        }
+
+        #container .active {
+            display: block;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #container {
+            width: 6000px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            cursor: pointer;
+            transition: left 1s linear;
+        }
+
+        #main #inner-right {
+            position: absolute;
+            left: 20px;
+            top: 27px;
+
+        }
+
+        #main #inner-right li,
+        #main #arrow li {
+            width: 20px;
+            height: 20px;
+            float: left;
+            font-size: 12px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            margin-right: 5px;
+            border-radius: 2px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+
+        #main #inner-right .selected {
+            background: orangered;
+        }
+
+        #main #arrow {
+            position: absolute;
+            left: 20px;
+            top: 450px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+
+        <div id="container">
+
+            <div id="inner-left">
+                <img class="active" src="../Lay1/Tmall/image/img1.jpg" alt="">
+                <img src="../Lay1/Tmall/image/img2.jpg" alt="">
+                <img src="../Lay1/Tmall/image/img3.jpg" alt="">
+                <img src="../Lay1/Tmall/image/img4.jpg" alt="">
+                <img src="../Lay1/Tmall/image/img2.jpg" alt="">
+            </div>
+        </div>
+        <ul id="inner-right">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul id="arrow">
+            <li id="arrow-left-select">&lt;</li>
+            <li id="arrow-right-select">&gt;</li>
+        </ul>
+    </div>
+    <script>
+        var a1 = document.getElementById("inner-left");
+        var a2 = a1.getElementsByTagName("img");
+        var a3 = document.getElementById("inner-right");
+        var a4 = a3.getElementsByTagName("li");
+        var oContainer = document.getElementById("container");
+        var timer;
+        var b1 = document.getElementById("arrow-left-select")
+        var b2 = document.getElementById("arrow-right-select");
+        var idx = 0;
+        for (var i = 0; i < a4.length; i++) {
+            a4[i].index = i;
+            a4[i].onclick = function () {
+                change(this.index);
+                idx = this.index;
+            }
+        }
+        b2.onclick = function () {
+            idx++;
+            if (idx == a4.length) {
+                idx = 0;
+            }
+            change(idx);
+        }
+
+        b1.onclick = function () {
+            idx--;
+            if (idx == -1) {
+                idx = a4.length - 1;
+            }
+            change(idx);
+        }
+        run();
+        // 划入的时候清掉定时器
+        oContainer.onmouseover = function () {
+            clearInterval(timer);
+        }
+        // 划出开启新的定时器
+        oContainer.onmouseout = function () {
+            run();
+        }
+        function run() {
+            timer = setInterval(function () {
+                b2.onclick();
+            }, 2000);
+        }
+        function change(idx1) {
+            for (var j = 0; j < a4.length; j++) {
+                a4[j].className = "";
+                oContainer.style.left = 0;
+            }
+            a4[idx1].className = "selected";
+            oContainer.style.left = idx1 * (-1150) + "px";
+        }
+    </script>
+</body>
+
+</html>

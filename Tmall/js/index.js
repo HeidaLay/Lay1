@@ -15,3 +15,20 @@ for(var i=0;i<a2.length;i++)
      a4[this.index].className="content1-inner b2";
      }
      }
+var c1=document.getElementById("slide-box");
+var c2=c1.getElementsByClassName("active");
+var c3=document.getElementById("img-box");
+var c4=c3.getElementsByClassName("selected");
+for(var i=0;i<c4.length;i++)
+{
+     c4[i].index=i;
+     c4[i].onmouseover=function(){
+     for(var j=0;j<c4.length;j++)
+     {
+      c2[j].className="";
+      c4[j].className="";
+     }
+     this.className="active";
+     c4[this.index].className="selected";
+     }
+}

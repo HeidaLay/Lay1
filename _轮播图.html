@@ -24,6 +24,8 @@
             height: 500px;
             position: relative;
             margin: 100px auto;
+            cursor: pointer;
+            overflow: hidden;
         }
         #container #inner-right{
             position: absolute;
@@ -31,7 +33,7 @@
             bottom: 22px;
             
         }
-        #container #inner-right li{
+        #container #inner-right li, #container #arrow li{
             width: 20px;
             height: 20px;
             float: left;
@@ -42,20 +44,29 @@
             border-radius: 2px;
             text-align: center;
             line-height: 20px;
+            cursor: pointer;
         }
         #container #inner-right .selected{
             background: orangered;
         }
+        #container #arrow {
+            position: absolute;
+            left:20px;
+            top:458px;
+        }
+
+        
     </style>
 </head>
 <body>
+    
     <div id="container">
         <div id="inner-left">
             <img class="active"src="../Lay1/Tmall/image/img1.jpg" alt="">
             <img src="../Lay1/Tmall/image/img2.jpg" alt="">
+            <img src="../Lay1/Tmall/image/img3.jpg" alt="">
+            <img src="../Lay1/Tmall/image/img4.jpg" alt="">
             <img src="../Lay1/Tmall/image/img2.jpg" alt="">
-            <img src="../Lay1/Tmall/image/img2.jpg" alt="">
-            <img src="../Lay1/Tmall/image/img1.jpg" alt="">
         </div>
         <ul id="inner-right">
             <li class="selected">1</li>
@@ -64,12 +75,18 @@
             <li>4</li>
             <li>5</li>
         </ul>
+        <ul id="arrow">
+            <li id="arrow-left-select">&lt;</li>
+            <li id="arrow-right-select">&gt;</li>
+        </ul>
     </div>
     <script>
         var a1=document.getElementById("inner-left");
         var a2=a1.getElementsByTagName("img");
         var a3=document.getElementById("inner-right");
         var a4=a3.getElementsByTagName("li");
+        var oContainer=document.getElementById("container");
+        var timer=0;
         for(var i=0;i<a4.length;i++)
         {
             a4[i].index=i;
@@ -78,11 +95,56 @@
                 a4[j].className="";
                 a2[j].className="";
                 }
-            
+                idx=this.index;
             this.className="selected";
             a2[this.index].className="active";
             }
         }
+        var b1=document.getElementById("arrow-left-select")
+        var b2=document.getElementById("arrow-right-select");
+        var idx=0;
+        
+            b2.onclick=function(){
+                idx++;
+                if(idx==a4.length){
+                    idx=0;
+                }
+             for(var k=0;k<a4.length;k++) 
+             {
+                a2[k].className="";
+                a4[k].className="";
+             } 
+             a4[idx].className="selected"; 
+                a2[idx].className="active";
+            }
+            
+            b1.onclick=function(){
+                idx--;
+                if(idx==-1){
+                    idx=a4.length-1;
+                }
+             for(var k=0;k<a4.length;k++) 
+             {
+                a2[k].className="";
+                a4[k].className="";
+             } 
+             a4[idx].className="selected"; 
+                a2[idx].className="active";
+            }
+            run();
+            // 划入的时候清掉定时器
+            oContainer.onmouseover = function(){
+            clearInterval(timer);
+            }
+            // 划出开启新的定时器
+            oContainer.onmouseout= function(){
+            run();
+            }
+            function run(){
+            timer = setInterval(function(){
+                b2.onclick();
+            },1000);
+            }
     </script>
 </body>
 </html>

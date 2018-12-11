@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #content{
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #number{
+            list-style: none;
+            width: 520px;
+            position: absolute;
+            left: 0;
+        }
+        li{
+            width: 120px;
+            height: 120px;
+            float: left;
+            background: pink;
+            margin-right: 10px;
+        }
+        #button{
+             margin: 136px 94px;
+        }
+        #button span{
+            width: 100px;
+            height: 50px;
+            background: palevioletred;
+            color: white;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <ul id="number">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="button">
+            <span id="left">向左</span>
+            <span id="right">向右</span>
+        </div>
+    </div>
+    <script>
+        var onumber=document.getElementById("number");
+        var obutton_left=document.getElementById("left");
+        var obutton_right=document.getElementById("right");
+        onumber.innerHTML=onumber.innerHTML+onumber.innerHTML; //增加一倍的li
+        onumber.style.width=onumber.offsetWidth*2+"px";  //增加一倍的width
+        var speed=-3;
+        setInterval(function(){
+            onumber.style.left=onumber.offsetLeft+speed+"px";
+            if(onumber.offsetLeft<=-onumber.offsetWidth/2 )
+            {
+                onumber.style.left=0;
+            }
+            if( onumber.offsetLeft > 0)
+            {
+                onumber.style.left = -onumber.offsetWidth/2 +"px";
+            }
+        },20)
+        obutton_left.onclick=function(){
+           speed=-3;
+        }
+        obutton_right.onclick=function(){
+           speed=3;
+        }
+    </script>
+</body>
+</html>
