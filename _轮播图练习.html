@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #content{
+            margin: 100px auto;
+            width: 750px;
+            height: 291px;
+            overflow: hidden;
+            position: relative;
+        }
+        #img-box{
+            width: 3750px;
+            height: 291px;
+            position: absolute;
+            left: 0;
+            transition: left 1s linear;
+            
+        }
+        #img-box img{
+            float: left;
+        }
+        #click{
+            position: absolute;  
+            left: 20px;
+            top: 260px;
+        }
+        #click li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background:yellow;
+            margin-right: 10px;
+            color: black;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #btn-box{
+            position: absolute;
+            left: 590px;
+            top: 260px;
+        }
+        #btn-box li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background:yellow;
+            margin-right: 10px;
+            color:black;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #btn-box .selected{
+            background: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="img-box">
+            <img  class="active" src="../Lay1/轮播图/img/1.jpg" alt="">
+            <img src="../Lay1/轮播图/img/2.jpg" alt="">
+            <img src="../Lay1/轮播图/img/3.jpg" alt="">
+            <img src="../Lay1/轮播图/img/4.jpg" alt="">
+            <img src="../Lay1/轮播图/img/5.jpg" alt="">
+        </div>
+            <ul id="btn-box"> 
+                <li class="selected">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <ul id="click">
+                <li id="left">&lt;</li>
+                <li id="right">&gt;</li>
+            </ul>
+        
+    </div>
+    <script>
+        var a1=document.getElementById("img-box");
+        var a2=a1.getElementsByTagName("img");
+        var a3=document.getElementById("btn-box");
+        var a4=a3.getElementsByTagName("li");
+        var b1=document.getElementById("left");
+        var b2=document.getElementById("right");
+        var main=document.getElementById("content")
+        var iNow=0;
+        var timer;
+        for(var i=0;i<a4.length;i++)
+        {   
+            a4[i].index=i;
+            a4[i].onclick=function(){
+                for(var j=0;j<a4.length;j++)
+                {
+                    a4[j].className="";
+                }
+                this.className="selected";
+                a1.style.left=-this.index*750+"px";
+            }
+        }
+        b1.onclick=function(){
+            iNow--;
+            if(iNow==-1)
+            {
+                iNow=a4.length;
+            }
+            for(var j=0;j<a4.length;j++)
+                {
+                    a4[j].className="";
+                }
+                a4[iNow].className="selected";
+                a1.style.left=-[iNow-1]*750+"px";
+        }
+        b2.onclick=function(){
+            iNow++;
+            if(iNow==a4.length)
+            {
+                iNow=0;
+            }
+            for(var j=0;j<a4.length;j++)
+                {
+                    a4[j].className="";
+                }
+                a4[iNow].className="selected";
+                a1.style.left=-[iNow]*750+"px";
+        }
+       timer= setInterval(function() {
+            b2.onclick();
+        }, 2000);
+        main.onmouseover=function(){
+            clearInterval(timer);
+        }
+    </script>
+</body>
+</html>
