@@ -10,17 +10,123 @@
             padding: 0;
             margin: 0;
         }
-        #content{
-            width: 1000px;
-            height: 500px;
-            background: #f2f2f2;
-            margin: 100px auto;
+        body{
+            background:black;
         }
+        #content{
+            width: 1016px;
+            height: 500px;
+           /* background: #000;*/
+            margin: 40px auto;
+            perspective: 1000px;
+        }
+        #content img{
+            width: 102px;
+            /*height: 200px;*/
+            float: left;
+        }
+        #btn{
+            width: 200px;
+            height: 100px;
+            background: #ff0036;
+            margin:0 auto;
+            border-radius: 10px;
+            margin-bottom: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 28px;
+            cursor: pointer;
+            }
     </style>
 </head>
 <body>
     <div id="content">
-        <img src="" alt="">
+        <img src="../Lay1/goddness/1.jpg" alt="">
+        <img src="../Lay1/goddness/2.jpg" alt="">
+        <img src="../Lay1/goddness/3.jpg" alt="">
+        <img src="../Lay1/goddness/4.jpg" alt="">
+        <img src="../Lay1/goddness/5.jpg" alt="">
+        <img src="../Lay1/goddness/6.jpg" alt="">
+        <img src="../Lay1/goddness/7.jpg" alt="">
+        <img src="../Lay1/goddness/8.jpg" alt="">
+        <img src="../Lay1/goddness/9.jpg" alt="">
+        <img src="../Lay1/goddness/10.jpg" alt="">
+        <img src="../Lay1/goddness/11.jpg" alt="">
+        <img src="../Lay1/goddness/12.jpg" alt="">
+        <img src="../Lay1/goddness/13.jpg" alt="">
+        <img src="../Lay1/goddness/14.jpg" alt="">
+        <img src="../Lay1/goddness/15.jpg" alt="">
+        <img src="../Lay1/goddness/16.jpg" alt="">
+        <img src="../Lay1/goddness/17.jpg" alt="">
+        <img src="../Lay1/goddness/18.jpg" alt="">
+        <img src="../Lay1/goddness/19.jpg" alt="">
+        <img src="../Lay1/goddness/20.jpg" alt="">
+        <img src="../Lay1/goddness/21.jpg" alt="">
+        <img src="../Lay1/goddness/22.jpg" alt="">
+        <img src="../Lay1/goddness/23.jpg" alt="">
+        <img src="../Lay1/goddness/12.jpg" alt="">
+        <img src="../Lay1/goddness/2.jpg" alt="">
+        <img src="../Lay1/goddness/5.jpg" alt="">
+        <img src="../Lay1/goddness/6.jpg" alt="">
+        <img src="../Lay1/goddness/7.jpg" alt="">
+        <img src="../Lay1/goddness/8.jpg" alt="">
+        <img src="../Lay1/goddness/12.jpg" alt="">
+        <img src="../Lay1/goddness/13.jpg" alt="">
+        <img src="../Lay1/goddness/14.jpg" alt="">
+        <img src="../Lay1/goddness/15.jpg" alt="">
+        <img src="../Lay1/goddness/16.jpg" alt="">
+        <img src="../Lay1/goddness/17.jpg" alt="">
+        <img src="../Lay1/goddness/20.jpg" alt="">
+        <img src="../Lay1/goddness/21.jpg" alt="">
+        <img src="../Lay1/goddness/22.jpg" alt="">
+        <img src="../Lay1/goddness/23.jpg" alt="">
+        <img src="../Lay1/goddness/12.jpg" alt="">
+        <img src="../Lay1/goddness/19.jpg" alt="">
+        <img src="../Lay1/goddness/2.jpg" alt="">
+        <img src="../Lay1/goddness/7.jpg" alt="">
+        <img src="../Lay1/goddness/15.jpg" alt="">
+        <img src="../Lay1/goddness/12.jpg" alt="">
+
+
+        
     </div>
+    <div id="btn">
+            开始旋转
+        </div>
+    <script>
+        var a1=document.getElementById("content");
+        var a2=a1.getElementsByTagName("img");
+        var btn=document.getElementById("btn");
+        var num=0;
+        btn.onclick=function(){
+            for(let i=0;i<a2.length;i++)
+            {
+                a2[i].style.transitionDuration="300ms"; //过渡时间
+                setTimeout(function(){
+                    a2[i].style.transform="scale(0.5)";
+                    a2[i].addEventListener("transitionend",function(){
+                        num++;
+                        if(num==45){
+                        nextRotate();
+                        }
+                    },false)
+                }, Math.random()*450+1);
+            }
+            num=0;
+            
+        }
+        function nextRotate(){
+            for(let j=0;j<a2.length;j++)
+            {
+                a2[j].style.transition="";
+                a2[j].style.transform="rotateY(0deg) translateX(-1000px) translateZ("+Math.random()*600+"px)";
+                setTimeout(function(){
+                    a2[j].style.transitionDuration = "2.5s";
+                    a2[j].style.transform = "rotateY(-360deg) translateX(0) translateZ(0)";
+                 }, Math.random() * 450);
+            
+            }
+        }
+    </script>
 </body>
 </html>

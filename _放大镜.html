@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #left-img{
+            position: relative;
+            float: left;
+        }
+        span{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255,255, 0.5);
+            display: none;
+
+        }
+        #right-img{
+            width: 400px;
+            height: 400px;
+            float: left;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+        #right-img img{
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="left-img">
+        <img src="../Lay1/1.jpg" alt="">
+        <span></span>
+    </div>
+    <div id="right-img">
+        <img id="big-img"src="../Lay1/2.jpg" alt="">
+    </div>
+    <script>
+        var oLeft=document.getElementById("left-img");
+        var oSpan=oLeft.getElementsByTagName("span")[0];
+        var oRight=document.getElementById("right-img");
+        var Big_img=document.getElementById("big-img");
+        oLeft.onmouseover=function(){
+            oSpan.style.display="block";
+            oRight.style.display="block";
+        }
+        oLeft.onmousemove=function(e){
+            var x=e.clientX-oSpan.offsetWidth/2+"px";
+            var y=e.clientY-oSpan.offsetHeight/2+"px";
+            oSpan.style.left=x;
+            oSpan.style.top=y;
+           if(oSpan.offsetLeft<=0)
+           {
+               oSpan.style.left=0;
+           }
+           if(oSpan.offsetLeft>=oLeft.offsetWidth-oSpan.offsetWidth)
+           {
+               oSpan.style.left=oLeft.offsetWidth-oSpan.offsetWidth+"px";
+           }
+           if(oSpan.offsetTop<=0)
+           {
+               oSpan.style.top=0;
+           }
+           if(oSpan.offsetTop>=oLeft.offsetHeight-oSpan.offsetHeight)
+           {
+               oSpan.style.top=oLeft.offsetHeight-oSpan.offsetHeight+"px";
+           }
+            var percent=oSpan.offsetLeft/(oLeft.offsetWidth-oSpan.offsetWidth);
+            Big_img.style.left=-percent*(Big_img.offsetWidth-oRight.offsetWidth)+"px";
+            var percent2=oSpan.offsetTop/(oLeft.offsetHeight-oSpan.offsetHeight);
+            Big_img.style.top=-percent2*(Big_img.offsetHeight-oRight.offsetHeight)+"px";
+        }
+        oLeft.onmouseout=function(){
+            oSpan.style.display="none";
+            oRight.style.display="none";
+        
+        }
+    </script>
+</body>
+</html>
