@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+   /* background: #337ab7;*/
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #337ab7;
+}
+#wrapper{
+    width: 1520px;
+    height: 3438px;
+    background: #337ab7;
+}
+#inner1 a{
+    /*text-decoration: none;*/
+    color:black;
+    margin-left: 140px;
+}
+#inner1{
+    width: 100%;
+    height: 36px;
+    background: #f2f2f2;
+    line-height: 36px;
+    font-size: 18px;
+}
+#inner1 a:hover{
+    color: #337ab7;
+}
+#inner1 .behend{
+    font-size: 16px;
+    margin-left: 1070px;
+}
+#header{
+    height: 65px;
+    width: 100%;
+    background: white;
+    padding-left: 140px;
+    line-height: 65px;
+}
+#header li{
+    float: left;
+    margin-right: 44px;
+}
+#header li a{
+    color: black;
+}
+#header li a:hover{
+    color:blue;
+}
+#target{
+    width: 1520px;
+    height: 427px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+#target img{
+    position: absolute;
+    left: -210px;
+    height: auto;
+}
+#header img{
+    width: 130px;
+    height: 22px;
+    vertical-align: middle;
+}
+#header .logo{
+    padding-left:  60px;
+    padding-right: 200px;
+}
+#adv {
+    width: 1520px;
+    height: 320px;
+    float: left;
+    margin: 40px auto;
+    position: relative;
+   
+}
+#adv img{
+   /* float: left;
+    padding-right: 25px;*/
+    position: absolute;
+    display: block;
+}
+#adv #img1{
+    left: 140px;
+}
+#adv #img2{
+    left: 570px;
+}
+#adv #img3{
+    left: 1000px;
+}
+#section{
+    width: 1280px;
+    height: 472px;
+    background: yellowgreen;
+    float: left;
+    margin-left: 125px;
+}
+#section p{
+    width: 52px;
+    height: 32px;
+    float: left;
+    font-size: 26px;
+    padding-right: 100px;
+}
+#section ul{
+    float: left;
+    margin-right: 100px;
+}
+#section li{
+    float: left;
+    font-size: 20px;
+    padding-right: 25px;
+}
+#section a{
+    padding-left: 500px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+#section img{
+    width: 217px;
+    height: 217px;
+}

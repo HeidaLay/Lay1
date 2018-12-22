@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #left{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            float: left;
+            left: 0;
+            top: 0;
+        }
+        #left span{
+            display:none;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255, 0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            
+        }
+        #right{
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            display: none;
+            position: relative;
+            float: left;
+        }
+        #right img{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="left">
+        <img src="../Lay1/1.jpg" alt="">
+        <span id="inner"></span>
+    </div>
+    <div id="right">
+        <img  src="../Lay1/2.jpg" alt="">
+    </div>
+    <script>
+        var Oinner=document.getElementById("inner");
+        var Oleft=document.getElementById("left");
+        var Oright=document.getElementById("right");
+        var Oimg=Oright.getElementsByTagName("img")[0];
+        Oleft.onmouseover=function(){
+            Oinner.style.display="block";
+            Oright.style.display="block";
+        }
+        Oleft.onmouseout=function(){
+            Oinner.style.display="none";
+            Oright.style.display="none";
+        }
+        Oleft.onmousemove=function(e){
+            var x=e.clientX-Oinner.offsetWidth/2;
+            var y=e.clientY-Oinner.offsetHeight/2;
+            Oinner.style.left=x+"px";
+            Oinner.style.top=y+"px";
+            if(Oinner.offsetLeft<=0)
+            {
+                Oinner.style.left=0;
+            }
+            if(Oinner.offsetLeft>=Oleft.offsetWidth-Oinner.offsetWidth)
+            {
+                Oinner.style.left=Oleft.offsetWidth-Oinner.offsetWidth+"px";
+            }
+            if(Oinner.offsetTop<=0)
+            {
+                Oinner.style.top=0;
+            }
+            if(Oinner.offsetTop>=Oleft.offsetHeight-Oinner.offsetHeight)
+            {
+                Oinner.style.top=Oleft.offsetHeight-Oinner.offsetHeight+"px";
+            }
+            var Max_left=Oleft.offsetWidth-Oinner.offsetWidth;
+            var Max_top=Oleft.offsetHeight-Oinner.offsetHeight;
+            var percent_left=Oinner.offsetLeft/Max_left;
+            var percent_top=Oinner.offsetTop/Max_top;
+            Oimg.style.left=-percent_left*(Oimg.offsetWidth-Oright.offsetWidth)+"px";
+            Oimg.style.top=-percent_top*(Oimg.offsetHeight-Oright.offsetHeight)+"px";
+        }
+    </script>
+</body>
+</html>
