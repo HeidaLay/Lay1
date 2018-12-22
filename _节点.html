@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div id="div1">
+            1111111
+        </div>
+        <div id="div2">
+            22222
+            <div>66666</div>
+        </div>
+        <div id="div3">
+            333333
+        </div>
+    </div>
+    <script>
+        var Odiv1 = document.getElementById("div1");
+        console.log(Odiv1.nodeType);
+        /*节点
+            nodeType 节点类型
+            元素节点 1
+            属性节点 2
+            文本节点 3
+            nodeName
+        */
+        var Odiv2 = document.getElementById("div2");
+        var Odiv3 = document.getElementById("div3");
+        function next(elem) {
+            do {
+                elem = elem.nextSibling;
+            } while (elem && elem.nodeType != 1)
+            return elem;
+        }
+        console.log(next(Odiv1));
+        console.log(next(Odiv3));
+        function first_child(elem) {
+            elem = elem.firstChild;
+            if (elem.nodeType == 1) {
+                return elem;
+            }
+            else {
+                return (next(elem));
+            }
+        }
+        console.log(first_child(div2));
+    </script>
+</body>
+
+</html>

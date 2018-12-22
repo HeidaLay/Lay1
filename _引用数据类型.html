@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var person1 = {
+            name: "Messi",
+            age: 31,
+            player:{
+                brother:"Xavi"
+            }
+        }
+        function clone(obj) {
+            var result = {};
+            for (var key in obj) {
+                if (typeof obj[key] == "object") {
+                    result[key] =clone(obj[key]);
+                }
+                else {
+                result[key] = obj[key];
+                }
+                
+            }
+            return result;
+        }
+        var person2 = clone(person1);
+        person1.name = "Neymar";
+        /*console.log(person1);
+        console.log(person2);*/
+        person1.player.brother="Ineisa";
+        console.log(person1);
+        console.log(person2);
+
+    </script>
+</body>
+
+</html>
