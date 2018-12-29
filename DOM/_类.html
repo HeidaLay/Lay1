@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        function Person(name,age,position){
-            this.name=name;
-            this.age=age;
-            this.position=position;
+        function Person(name, age, position) {
+            this.name = name;
+            this.age = age;
+            this.position = position;
         }
-        Person.prototype.play=function(){
+        Person.prototype.play = function () {
             console.log("我套你猴子");
         }
-        var p1=new Person("Messi",31,"RW");
+        var p1 = new Person("Messi", 31, "RW");
         console.log(p1);
-        var p2=new Person("Neymar",27,"LW");
+        var p2 = new Person("Neymar", 27, "LW");
         console.log(p2);
         p2.play();
-        
+
     </script>
 </body>
+
 </html>
