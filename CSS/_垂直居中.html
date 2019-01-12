@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+    
+        }
+        /*#div1{
+            width: 300px;
+            font-size: 26px;
+            background: #ff0036;   
+            position: absolute;
+            left: 50%;                                      /*1.用transform中的translate移动到中心
+            top: 50%; 
+            transform: translate(-50%,-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }*/
+        /*#container{
+            width: 800px;
+            height: 500px;
+            background: rebeccapurple;
+            position: relative;
+            margin: 30px auto;
+        }*/
+        /*#div1{
+            width: 300px;
+            height: 200px;
+            font-size: 26px;
+            background: greenyellow;
+            position: absolute;
+            left: 50%;                                        /*用margin等于负的宽和高的一半移动
+            top: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -100px;
+            margin-left: -150px;
+         }*/
+         #container{
+             display: flex;
+             /*min-height: 100vh;*/
+             margin: 0 auto;
+             background: rebeccapurple;
+             width: 800px;
+             height: 500px;
+         }
+         #div1{
+             margin: auto;
+             background: greenyellow;
+             width: 300px;
+             height: 200px;                          /*写不写宽高都可以 给父元素设置display:flex; 子元素margin:auto;即水平垂直方向都居中*/
+             font-size: 26px;
+             justify-content: center;
+             align-items: center;
+         }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="div1">
+        23333333
+        </div>
+    </div>
+</body>
+</html>

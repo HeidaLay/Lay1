@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        /*function changed(){
+            var temp=[1,2,3,4,5,6,7,8,9];
+            var t=0;
+            for(var i=temp.length-1;i>=0;i--)
+            {
+            console.log(temp[i]);
+            }
+            
+            } 
+            changed();*/
+            var temp1=[1,2,3,4];
+            var t=0;
+            var temp2=[];
+            for(var i=0;i<temp1.length;i++)
+            {
+                t=temp1[i];
+                temp1[i]=temp1[length-1-i];
+                temp1[length-1-i]=t; 
+            }
+            for(var j=0;j<temp2.length;j++)
+            {
+                temp2[j]=temp1[j];
+            }
+            console.log(temp2);
+            
+            
+    </script>
+</body>
+</html> 
