@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 50px;
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+    </ul>
+    <div>点击</div>
+    <input type="text" name="" id="text">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $("ul").on("click","li",function(){
+            console.log($(this).html());
+        })
+        $("div").on("click",function(){
+            $("ul").append("<li>"+Math.random()+"</li>");
+        })
+        $("#text").on("focus",function(){
+            $(this).css("background","pink");
+        })
+        /*$("text").triggerHandler("focus");*/
+        $("#text").trigger("focus");    //自动获取焦点
+    </script>
+</body>
+</html>

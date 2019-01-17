@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container1{
+            width: 960px; 
+            margin: 0 auto;
+            overflow: hidden;
+            
+        }
+        #container2{
+            width: 960px;
+            margin: 0px auto;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        #left{
+            width: 630px;
+            height: 300px;
+            background: blue;
+           /* margin-right: 10px;*/
+            float: left;
+            display: table;
+        }
+        #right{
+            width: 300px;
+            height: 300px;
+            background: red;
+            float: right;
+            display: table;
+        }
+        h1{
+            background: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: antiquewhite;
+           /* margin-bottom: 10px;*/
+            width: 960px;
+            height: 100px;
+            margin: 10px auto;
+        }
+        p{
+          vertical-align: middle;
+          display: table-cell;  
+        }
+        
+        img{
+            width: 100%;
+        }
+        #normal{
+            display: block;
+        }
+        #_480,#_960{
+            display: none;
+        }
+        @media screen and (max-width:960px)
+        {
+            #_480,#normal{
+                display: none;
+            }
+            #_960{
+                display: block;
+            }
+            #left{
+                width:66%;
+                /* float: none; */
+            }
+            #right{
+                width:33%;
+                /* float: none; */
+            }
+            #container1,#container2,h1{
+                width: 100%;
+            }
+        }
+        @media screen and (max-width:480px)
+        {
+            #_960,#normal{
+                display: none;
+            }
+            #_480{
+                display: block;
+            }
+            #left{
+                width:100%;
+                float: none;
+            }
+            #right{
+                width: 100%;
+                float: none;
+            }
+            #container1,#container2,h1{
+                width: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>页头</h1>
+    <h1>标题</h1>
+    <div id="container1">
+        <img src="img/01.jpg" alt="" id="normal">
+        <img src="img/01_s.jpg" alt="" id="_480">
+        <img src="img/01_s_2x.jpg" alt="" id="_960">
+    </div>
+    <div id="container2">
+        <div id="left">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.</p>
+        </div>
+        <div id="right">
+               <p>Donec dolor arcu, interdum sed turpis faucibus, placerat ultricies felis. Donec pulvinar gravida rhoncus. Suspendisse vestibulum est eget dolor lobortis.</p>
+        </div>
+    </div>
+    <h1>页尾</h1>
+</body>
+</html>

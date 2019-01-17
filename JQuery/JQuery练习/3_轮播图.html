@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            *{
+               padding: 0;
+               margin: 0;
+           }
+           #container{
+               width: 1150px;
+               height: 500px;
+               position: relative;
+               margin: 100px auto;
+               cursor: pointer;
+               overflow: hidden; 
+               
+           }
+           #container #inner-left{
+               width: 6000px;
+               height: 500px;
+               position: absolute;
+               left: 0;
+               cursor: pointer;
+               /*transition: left 1s linear;*/
+           }
+           #container #inner-left img{
+               display: block;
+               float: left;
+               
+               
+           }
+           #container .active{
+               display: block;
+           }
+           li{
+               list-style: none;
+           }
+           #container #inner-right{
+               position: absolute;
+               left:20px;
+               top:27px;
+               
+           }
+           #container #inner-right li, #container #arrow li{
+               width: 20px;
+               height: 20px;
+               float: left;
+               font-size: 12px;
+               color:white;
+               background:rgba(0, 0, 0, 0.5);
+               margin-right: 5px;
+               border-radius: 2px;
+               text-align: center;
+               line-height: 20px;
+               cursor: pointer;
+           }
+          #container #inner-right .selected{
+               background: orangered;
+           }
+           #arrow {
+               position: absolute;
+               left:20px;
+               top:450px;
+           }
+       </style>
+</head>
+<body>
+    <div id="container">
+        <div id="inner-left">
+            <img class="active"src="../../Tmall/image/img1.jpg" alt="">
+            <img src="../../Tmall/image/img2.jpg" alt="">
+            <img src="../../Tmall/image/img3.jpg" alt="">
+            <img src="../../Tmall/image/img4.jpg" alt="">
+            <img src="../../Tmall/image/img2.jpg" alt="">
+        </div>
+        <ul id="inner-right">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul id="arrow">
+            <li id="arrow-left-select">&lt;</li>
+            <li id="arrow-right-select">&gt;</li>
+        </ul>
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        var counter=0;
+        $("#arrow-right-select").on("click",function(){
+            counter++;
+            if(counter==$('img').length)
+            {
+                counter=0;
+            } 
+            change(counter);
+        })
+
+        $("#arrow-left-select").on("click",function(){
+            counter--;
+            if(counter==-1)
+            {
+                counter=4;
+            } 
+            change(counter);
+        })
+        $("#inner-right li").on("click",function(){
+            change($(this).index());
+            counter=$(this).index();
+           /*$(this).addClass("selected").siblings().removeClass("selected");
+           $("#inner-left").css("left",-($(this).index())*$("img").width());
+           $("#inner-left").animate({
+                left:-$(this).index()*$("img").width()
+           },1000);*/
+        }) 
+        function change(index){
+            $("#inner-right li").eq(index).addClass("selected").siblings().removeClass("selected");  //eq()取索引  index()传索引
+            /*$("#inner-left").css("left",-($(index).index())*$("img").width());*/
+            $("#inner-left").stop().animate({
+                left:-index*$("img").width()
+           },1000);
+        }
+         
+    </script>
+</body>
+</html>

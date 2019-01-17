@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 0.28em;
+            cursor: pointer;
+        }
+        #title{
+            width: 100%;
+            background: #06c1ae;
+            color: white;
+            display: flex;
+            font-size: .32rem;
+            height: 1.01rem;
+            border-bottom: 0.005rem solid #21897d;
+        }
+        #sp1{
+            width: 1.2rem;
+            height: 1.01rem;
+            /*background: red;*/
+            text-align: center;
+            line-height: 1.01rem;
+            margin-right: 0.2rem;
+            margin-left: 0.2rem;
+           
+        }
+        #sp2{
+            width: 1.2rem;
+            height: 1.01rem;
+            /*background: yellow;*/
+            text-align: center;
+            line-height: 1.01rem;
+            font-size: .2rem;
+        }
+        #input{
+            /*width: 80%;
+            height: 100px;*/
+            /* background: purple; */
+            flex: 1;
+            height: .6rem;
+            padding-left: 0.2rem;
+            line-height: .6rem;
+            margin-top: .2rem;
+            font-size: .26rem;
+            border-radius: .06rem;
+            background: rgba(0,0,0,.15);
+            color: #68dbce;
+        }
+        #img-box{
+            background: url(img/11.png) no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 2rem;
+            border-bottom: 0.005rem solid #ddd8ce;
+        }
+        #list .content{
+            float: left;
+            padding-top: 0.2rem;
+            width: 20%;
+            font-size: 0.24rem;
+            text-align: center;
+        }
+        #list{
+           /* background: #f0efed; */
+           overflow: hidden;
+           border-bottom: 0.005rem solid #ddd8ce;
+           padding-bottom: 0.4rem;
+        }
+        #list .content:nth-child(1) .top{
+            background: #fd9d21;
+        }
+        #list .content:nth-child(2) .top{
+            background: #ff6767;
+        }
+        #list .content:nth-child(3) .top{
+            background: #8a90fa;
+        }
+        #list .content:nth-child(4) .top{
+            background: #fed030;
+        }
+        #list .content:nth-child(5) .top{
+            background: #fd9d21;
+        }
+        #list .content:nth-child(6) .top{
+            background: #fed030;
+        }
+        #list .content:nth-child(7) .top{
+            background: #4dc6ee;
+        }
+        #list .content:nth-child(8) .top{
+            background: #ff80c2;
+        }
+        #list .content:nth-child(9) .top{
+            background: #fd9d21;
+        }
+        #list .content:nth-child(10) .top{
+            background: #599eec;
+        }
+        #list .content .top{
+            width: 0.8rem;
+            height: 0.8rem;
+            display: block;
+            background: #ff0;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        li{
+            list-style: none;
+        }
+        #list .content .bottom {
+            margin: 0 auto;
+        }
+        .guess-like {
+            padding-left: 0.2rem;
+            padding-top: 0.2rem;
+        }
+        .guess-like {
+            font-size: 0.34rem;
+            color: #333;
+        }
+        .like-list li{
+            display: flex;
+            border-top: 0.005rem solid #ddd8ce;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+        }
+        .like-list .like-introduce{
+            flex:1;
+            margin-left: 0.2rem;
+        }
+        .like-list img{
+            width: 1.8rem;;
+            height: 1.8rem;
+        }
+        .like-list .p1{
+            font-size: 0.3rem;
+        }
+        .like-list .p2{
+            font-size: 0.24rem;
+        }
+        .like-list .p3{
+            font-size: 0.36rem;
+            color: #06c1ae;
+        }
+        .like-list .p4{
+            font-size: 0.26rem;
+            color: #06c1ae;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="title">
+        <span id="sp1">哈尔滨></span>
+        <span id="input">输入商家/品类/商圈</span>
+        <span id="sp2">我的</span>
+    </div>
+    <div id="img-box">
+    </div>
+    <ul id="list">
+        <li class="content">
+            <span class="top"></span>
+            <span class="bottom">美食</span>
+        </li>
+        <li class="content">
+            <span class="top"></span>
+            <span class="bottom">猫眼电影</span>
+        </li>
+        <li class="content">
+            <span class="top"></span>
+            <span class="bottom">酒店</span>
+        </li>
+        <li class="content">
+            <span class="top"></span>
+            <span class="bottom">休闲娱乐</span>
+        </li>
+        <li class="content">
+            <span class="top"></span>
+            <span class="bottom">外卖</span>
+        </li>
+        <li class="content">
+            <span class="top"></span>
+            <span class="bottom">KTV</span>
+        </li>
+        <li class="content">
+            <span class="top"></span>
+            <span class="bottom">周边游</span>
+        </li>
+        <li class="content">
+            <span class="top"></span>
+            <span class="bottom">丽人</span>
+        </li>
+        <li class="content">
+            <span class="top"></span>
+            <span class="bottom">小吃快餐</span>
+        </li>
+        <li class="content">
+            <span class="top"></span>
+            <span class="bottom">火车票</span>
+        </li>
+    </ul>
+    <div class="guess-like">
+        <div id="guessyoulike">猜你喜欢</div>
+        <ul class="like-list">
+            <li>
+                <img src="http://p1.meituan.net/200.0/deal/7d6274ede0aeb40e8fd8f267abfff9ec158761.jpg@166_0_667_667a%7C267h_267w_2e_90Q" alt="">
+                <div class="like-introduce">
+                    <p class="p1">豆角盖被小锅烀饼</p>
+                    <p class="p2">[芦家街/宣化街]排骨烀饼锅，建议4-6人使用</p>
+                    <span class="p3">118</span>
+                    <span class="p4">元</span>
+                </div>
+            </li>
+            <li>
+                <img src="http://p0.meituan.net/200.0/deal/d08159ed438ca92b5fa4dadae587a5be878091.jpg@520_0_3120_3120a%7C267h_267w_2e_90q" alt="">
+                <div class="like-introduce">
+                    <p class="p1">张亮麻辣烫</p>
+                    <p class="p2">[3店通用]10元代金券1张，可叠加</p>
+                    <span class="p3">8.8</span>
+                    <span class="p4">元</span>
+                </div>
+            </li>
+            <li>
+                <img src="http://p1.meituan.net/200.0/deal/3dac4793e5ddf2b6d5ba53d389f28dd051727.jpg@126_0_388_388a%7C267h_267w_2e_100Q" alt="">
+                <div class="like-introduce">
+                    <p class="p1">鲜芋仙</p>
+                    <p class="p2">[18店通用]10元代金券1份</p>
+                    <span class="p3">9</span>
+                    <span class="p4">元</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="rem.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .normal{
+            width: 100px;
+            height: 50px;
+            float: left;
+            background: paleturquoise;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 5px;
+            border: 1px solid black;
+        }
+        #div4,#div5,#div6{
+            width: 500px;
+            height: 250px;
+            background: ghostwhite;
+            border: 1px solid black;
+            float: left;
+            position: absolute;
+            left: 7px;
+            top: 59px;
+        }
+        .hidden{
+            display: none;
+        }
+        .selected{
+            background:blueviolet;
+            color: whitesmoke;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="normal">时事</div>
+    <div id="div2" class="normal">体育</div>
+    <div id="div3" class="normal">娱乐</div>
+    <div id="div4">时事</div>
+    <div id="div5" class="hidden">体育</div>
+    <div id="div6" class="hidden">娱乐</div>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $("#div1").on("click",function(){
+            $(this).addClass("selected");
+            $("#div2").removeClass("selected");
+            $("#div3").removeClass("selected");
+            
+        })
+        $("#div2").on("click",function(){
+            $(this).addClass("selected");
+            $("#div1").removeClass("selected");
+            $("#div3").removeClass("selected");
+            $("#div5").addClass("show");
+        })
+        $("#div3").on("click",function(){
+            $(this).addClass("selected");
+            $("#div1").removeClass("selected");
+            $("#div2").removeClass("selected");
+            $("#div6").addClass("show");
+        })
+    </script>
+</body>
+</html>

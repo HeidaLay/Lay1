@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" name="ball" id="">足球
+    <input type="checkbox" name="ball" id="">篮球
+    <input type="checkbox" name="ball" id="">乒乓球
+    <input type="checkbox" name="ball" id="">羽毛球
+    <button id="all">全选</button>
+    <button id="not-all">全不选</button>
+    <button id="instead">反选</button>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $("#all").on("click",function(){
+            $(":checkbox").prop("checked",true);
+        })
+        $("#not-all").on("click",function(){
+            $(":checkbox").prop("checked",false);
+        })
+        $("#instead").on("click",function(){
+            $(":checkbox").each(function(index,elem){
+                elem.checked=!elem.checked;
+            })
+        })
+    </script>
+</body>
+</html>

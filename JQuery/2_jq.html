@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">12345677777</div>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $("#div1").css("background","#ff0036");             //$div=$("#div1");
+        var oDiv1=document.getElementById("div1");  
+        oDiv1.style.background="green";
+        /*把jq对象转化成原生对象
+        1 $div.get(0)
+        2 $div[0]
+         原生对象转化成jq对象
+         $(element)
+         */
+        /*$div=$("#div1");
+        $div.get(0).innerHTML="hhhhh";*/
+        $(oDiv1).html("233333");
+    </script>
+</body>
+</html>

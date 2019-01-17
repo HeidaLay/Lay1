@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul li{
+            width: 100px;
+            height: 50px;
+            float: left;
+            background: paleturquoise;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 5px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .hidden{
+            display: none;
+        }
+        .normal{
+            width: 500px;
+            height: 250px;
+            background: ghostwhite;
+            border: 1px solid black;
+            float: left;
+            position: absolute;
+            left: 48px;
+            top: 67px;
+        }
+        .selected{
+            background:blueviolet;
+            color: whitesmoke;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="tab_li">时事</li>
+        <li class="tab_li">体育</li>
+        <li class="tab_li">娱乐</li>
+    </ul>
+    <div class="normal">时事</div>
+    <div class="normal hidden">体育</div>
+    <div class="normal hidden">娱乐</div>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $(".tab_li").on("click",function(){
+            $(this).addClass("selected").siblings().removeClass("selected");
+            $(".normal").eq($(this).index()).addClass("show").siblings().removeClass("show");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            width: 14px;
+            height: 14px;
+            float: left;
+            margin-right: 10px;
+            background-image: url(theme.gif);
+            background-repeat: no-repeat;
+        }
+        .news{
+            width: 100px;
+            height: 40px;
+            background: grey;
+            /*background: url(theme.gif);
+            background-repeat: no-repeat;*/
+            color: white;
+            float: left;
+            margin-top: 30px;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        li:nth-child(2){
+            background-position: -100px 0;
+        }
+        li:nth-child(3){
+            background-position: -80px 0;
+        }
+        li:nth-child(4){
+            background-position: -60px 0;
+        }
+        li:nth-child(5){
+            background-position: -40px 0;
+        } 
+        li:nth-child(6){
+            background-position: -20px 0;
+        }
+        li:nth-child(1).active{
+            background-position: 0px -15px;
+        }
+        li:nth-child(2).active{
+            background-position: -100px -15px;
+        }
+        li:nth-child(3).active{
+            background-position: -80px -15px;
+        }
+        li:nth-child(4).active{
+            background-position: -60px -15px;
+        }
+        li:nth-child(5).active{
+            background-position: -40px -15px;
+        } li:nth-child(6).active{
+            background-position: -20px -15px;
+        }
+        #container{
+            overflow: hidden;
+        }
+        .bg0{
+            background: #9a9a9a;
+        }
+        .bg1{
+            background: #ba3ad9;
+        }
+        .bg2{
+            background: #e11355;
+        }
+        .bg3{
+            background: #08b3ce;
+        }
+        .bg4{
+            background:#fba60a;
+        }
+        .bg5{
+            background: #afd400;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul>
+        <li class="active"></li>
+        <li></li>
+        <li ></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        </ul>
+    </div>
+    <div class="news">时事新闻</div>
+    <div class="news">娱乐新闻</div>
+    <div></div>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $("li").on("click",function(){
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+            /*$(this).index(".news").addClass(".bg2");*/
+            $(".news").attr("class","news bg"+$(this).index());
+           // $(".news").addClass("news bg"+$(this).index());   addClass 但是后面的颜色会把前面的覆盖
+        })
+    </script>
+</body>
+</html>

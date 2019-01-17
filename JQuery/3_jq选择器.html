@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li class="aab">111</li>
+        <li class="abbc">222</li>
+        <li class="abccc">333<span>hhhh</span></li>
+        <li class="abdcc">444</li>
+        <li class="acc">555<p>23333</p></li>
+        <li class="ab cc d">666</li>  
+        <input type="button" value="click" id="btn">点击领取
+        <input type="checkbox" name="selected">1
+        <input type="checkbox" name="selected">2
+        <input type="checkbox" name="selected" id="" checked=true>3
+    </ul>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $(".acc").css("color","red");
+        $("li").css("background","yellow");
+        $("p:hidden").css("display","block");
+        $("li:parent").css("color","blue");
+        $("#btn").on("click",function(){
+            $(":checkbox").prop("checked",false);      //prop 普通属性  attr 特性
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       #tb,tr,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 50%;
+            height: 100px;
+        }
+        #tb{
+            width: 400px;
+            height: 300px;
+        }
+      .title{
+          background: blueviolet;
+      }
+      .txt{
+          border: none;
+      }
+    </style>
+</head>
+<body>
+    <table id="tb">
+        <tr>
+            <th colspan="2">鼠标点击表格就可以编辑</th>
+        </tr>
+        <tr>
+            <th class="aa">学号</th>
+            <th class="aa">姓名</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td class="editable">张三</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td class="editable">李四</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td class="editable">王五</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td class="editable">赵六</td>
+        </tr>
+    </table>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $(".aa").addClass("title");
+        $("tr:odd").css("background","pink");
+        $(".editable").on("click",function(){
+            //判断 是否可编辑 如果没被编辑 
+            if(!$(this).find("input").size()>0)
+            {
+            var $val=$(this).html();
+            $(this).html("<input value="+$val+"></input>");
+            $(this).children().trigger("select");
+            }
+        })
+        $(".editable").on("keyup","input",function(event){
+            if(event.which==13)
+            {
+                var $val=$(this).val();
+                $(this).parent().html($val);
+            }
+        })
+        $(".editable").on("blur","input",function(event){
+            if(event.which=13)
+            {
+                var $val=$(this).val();
+                $(this).parent().html($val);
+            }
+        })
+    </script>
+</body>
+</html>

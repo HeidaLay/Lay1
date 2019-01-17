@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            background: blueviolet;
+            color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">哈哈哈哈</div>
+    <button id="btn">点击</button>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        /*$("#btn").on("click",function(){
+           var $div1=$("#div1");
+            if($div1.hasClass("active"))
+            {
+                $div1.removeClass("active");
+            }
+            else{
+                $div1.addClass("active");
+            }
+        })*/
+        $("#btn").on("click",function(){
+            var $div1=$("#div1");
+            $div1.toggleClass("active");
+        })
+    </script>
+</body>
+</html>

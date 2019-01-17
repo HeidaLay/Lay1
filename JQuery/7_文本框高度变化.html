@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        textarea{
+            margin-top: 10px;
+            width: 300px;
+            height: 100px;
+            background: goldenrod;
+            border: 3px solid blueviolet;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="add">增加</button>
+    <button id="decrease">减少</button>
+    </br>
+    <textarea>抱怨个屁抱怨个屁抱怨个屁抱怨个屁抱怨个屁抱怨个屁抱怨个屁抱怨个屁抱怨个屁抱怨个屁抱怨个屁抱怨个屁抱怨个屁抱怨个屁</textarea>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $("#add").on("click",function(){
+            var h=$("textarea").height();
+            if(h<500)
+            {
+                $("textarea").height(h+50);
+            }
+        })
+        $("#decrease").on("click",function(){
+            var h=$("textarea").height();
+            if(h>50)
+            {
+                $("textarea").height(h-50);
+            }
+        })
+    </script>
+</body>
+</html>

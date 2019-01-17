@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div0{
+            width: 500px;
+            height: 500px;
+            background: blue;
+            position: relative;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 50px;
+            top: 90px;
+        }
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div0">
+        <div id="div1">233333</div>
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+       console.log($("#div1").position());
+       console.log($("#div1").offset().left);
+       $(window).on("scroll",function(){
+           console.log($(window).scrollTop());
+       })
+    </script>
+</body>
+</html>
