@@ -9,12 +9,23 @@
 </head>
 <body>
     <div id="container">
-        <div class="page-1">
-            <img  class="img1"src="/移动端/Demo/img/cover.png" alt="">
-            <img  class="img2"src="/移动端/Demo/img/wording_cover.png" alt="">
-            <img  class="img3"src="/移动端/Demo/img/icon_up.png" alt="">
+        <div class="page page-1 ">
+            <img  class="img1 moveFromTop"src="img/cover.png" alt="">
+            <img  class="img2 moveFromLeft"src="img/wording_cover.png" alt="">
+            <img  class="common-img commonIcon"src="img/icon_up.png" alt="">
+        </div>
+        <div class="page page-2 hide">
+            <img class="img1 moveFromBottom" src="img/wording.png" />
+            <img class="img2 moveCircle" src="img/circle.png" />
+            <img class="img3 moveFromLeft " src="img/people.png" />
+            <!-- <img class="img4" src="img/dot1.png" /> -->
+            <img class="img5 moveScale" src="img/check_develop.png" />
+            <img class="common-img commonIcon" src="img/icon_up.png" />
+            <img class="img7 moveScale" src="img/floating_develop.png" />
         </div>
     </div>
-    <script></script>
+    <script src="js/zepto.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

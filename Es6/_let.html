@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+            background: #ff0036;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+    <script>
+        // var Ali=document.getElementsByTagName("li");
+        // for(let i=0;i<Ali.length;i++)
+        // {
+        //     Ali[i].onclick=function(){
+        //         console.log(i);
+        //     }
+        // }   
+        //闭包:外部函数中有一个内部函数 内部函数引用外部函数中的局部变量 使得外部函数中的局部变量不释放 可能会内存泄漏
+        // var Ali=document.getElementsByTagName("li");
+        // for(var i=0;i<Ali.length;i++)
+        // {
+        //     (function(index){
+        //         Ali[i].onclick=function(){
+        //             console.log(index);
+        //         }
+        //     })(i)
+        // }
+        var Ali=document.getElementsByTagName("li");
+        for(var i=0;i<Ali.length;i++)
+        {
+            Ali[i].index=i;
+        Ali[i].onclick=function(){
+            console.log(i);
+        }
+        }
+        console.log(a);
+        var a=10;
+        /*let 没有变量提升 
+           console.log(a);
+           let a=5;
+              块级作用域*/
+
+        //let 不能重复声明变量
+        // let a=10;
+        // let a=5;
+        // console.log(a);
+
+
+        //let 暂时性死区 (临时失效区) 在当前作用域  不允许同名变量进来
+        // var a=5;
+        // function fn(){
+        //     console.log(a);
+        //     let a=10;
+        // }
+        // fn();
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*扩展运算符 ..
+        1 复制数组
+        2 作为数组的一部分
+        3 合并数组和对象
+        4 类数组转化成数组
+        
+        rest运算符 剩余的
+        argument 参数 (返回类数组)
+        argument.callee 函数自己
+        */
+        let a6=[1,2,3];
+        let a7=[4,5,6];
+        let a8=[...a6,...a7];
+        console.log(a8);
+        function fn()
+        {
+            console.log(arguments[2]);
+
+        }
+        fn(23,6,8,7);
+    </script>
+</body>
+</html>
