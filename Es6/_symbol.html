@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name=Symbol('n');
+        let age=Symbol('a');
+        let obj={
+            age:21
+        }
+        obj[name]="xx";
+        obj[age]="yy";
+        console.log(obj);
+        var person1={
+            name:'zs',
+            age:12
+        }
+        console.log(person1.name);  //输出的是值
+        for(var key in person1)
+        {
+            console.log(key,person1[key]);
+            
+        }
+        
+    </script>
+</body>
+</html>

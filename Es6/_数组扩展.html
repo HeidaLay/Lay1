@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+        // //类数组转化成数组
+        // var oLi=document.getElementsByTagName("li");
+        // var a=Array.from(oLi);
+        // a.push("hhhh");
+        // console.log(a);
+        var arr=[a,b,c,d,e,f,g];
+        var result=arr.find(function(val,index){
+            console.log(val,index);
+        })
+        // var person=[
+        //     {
+        //         name:'Messi',
+        //         age:31
+        //     },
+        //     {
+        //         name:'Suya',
+        //         age:50
+        //     },
+        //     {
+        //         name:'Dembele',
+        //         age:17
+        //     }
+        // ];
+        // var result=person.filter(function(obj,index){
+        //     return obj.age>20;
+        // })
+        // console.log(result);
+        var arr=[1,5,2,4,9,10,15];
+        var result2=arr.map(function(index,val){
+            if(index>3)
+            {
+                return val+"xx";
+            }
+            else{
+                return val+"yy";
+            }
+        })   
+         
+        </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 200px;
+            height: 100px;
+            margin: 0 auto;
+            
+        }
+        #app{
+            width: 800px;
+            height: 500px;
+            border-bottom: 1px solid black;
+            margin: 100px auto;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            background: green;
+            margin-bottom: 10px;
+            width: 100%;
+            height: 50px;
+        }
+        .active{
+            background: #ff0036;
+        }
+        ul li span{
+            /* margin-left: 450px; */
+            float: right;
+         }  
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <h1>Service</h1>
+        <ul>
+            <li v-for="obj in list" :class={active:obj.isActive} @click="change(obj)">{{obj.name}}
+                <span>{{obj.price}}</span>
+            </li>
+        </ul>
+        <span>total:{{total()}}</span>
+    </div>
+    <script src="../Vue/vue.js"></script>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    {
+                      name:"aaa",
+                      isActive:false,
+                      price:15
+                    },
+                    {
+                      name:"bbb",
+                      isActive:false,
+                      price:155
+                    },
+                    {
+                      name:"ccc",
+                      isActive:false,
+                      price:124
+                    },
+                    {
+                      name:"ddd",
+                      isActive:false,
+                      price:111
+                    },
+                    {
+                      name:"eee",
+                      isActive:false,
+                      price:245
+                    }
+                ]
+            },
+            methods: {
+                change(obj){
+                   obj.isActive=!obj.isActive;
+                },
+                total(){
+                let count=0;
+                this.list.forEach(function(obj,index){
+                        if(obj.isActive){
+                            count+=obj.price;
+                        }
+                })
+                return count;
+            }
+            },
+          
+        })
+    </script>
+</body>
+</html>

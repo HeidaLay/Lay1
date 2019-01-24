@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+         /*数组去重方法*/
+        //  let a=[1,2,3,4,5,2,3];
+        //  let b=new Set(a);
+        //  console.log(a);
+        //  console.log(b);                    //1
+        //  console.log([...b]);
+        // let result=[];
+        
+        // for(var val of a)
+        // {
+        //     if(!result.includes(val))
+        //     {
+        //         result.push(val);           //2
+        //     }
+        // }
+        // console.log(result);
+        // for(var val of a)
+        // {
+        //     if(result.indexOf(val)==-1)     
+        //     {                              
+        //         result.push(val);           //3
+        //     }
+        // }
+        // console.log(result);
+        let c=new Set([1,2,3,4,5,6,7]);
+        // c.add(10);
+        // console.log(c);
+        c.delete(4);
+        console.log(c);    /*Set建立的类数组 不允许重复*/
+        console.log(c.has(5));
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        {{count}}
+        <button @click="add(2)">+2</button>
+        <button v-on:click="add(3)">+3</button>
+    </div>
+    <script src="../Vue/vue.js"></script>
+    <script>
+        var vm=new Vue({
+            el:'#div1',
+            data:{
+                count:0
+            },
+            methods:{
+                add(num){
+                this.count+=num;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

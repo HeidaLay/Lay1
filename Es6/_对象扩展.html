@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name="xiaoming";
+        var age=20;
+        var obj={
+            name,
+            age,
+        }
+        console.log(obj);
+        var sc="school"
+        var obj2={
+            name:"zs",
+            age:20,
+            sc:"Heida"
+        }
+        console.log(obj2);
+        var obj3={
+            name:"zs",
+            age:20,
+            [sc]:"Heida"
+        }
+        //比较两个值是否严格相等  (数值和类型)
+        console.log(obj3);
+        console.log(NaN===NaN);     
+        console.log(Object.is(NaN,NaN));
+        console.log(+0===-0);
+        console.log(Object.is(+0,-0));
+    </script>
+</body>
+</html>
