@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a{
+            color: #ff0036;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        请输入<input type="text" v-model="str" @keyup="filter()">
+            <button @click="add()">add</button>
+            <ul>
+                <li v-for="(obj,index) in list" :class={a:obj.isA} @click="change(obj)">
+                    {{obj.val}} 
+                    <button @click="del(index)">删除</button>
+                </li>
+               
+            </ul>
+    </div>
+    <script src="../Vue/vue.js"></script>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                str:"",
+                list:[
+                    // {
+                    //     val:"aaa",
+                    //     isA:"true"
+                    // }
+                ],
+                showList:[
+                  
+                ]
+            },
+            methods: {
+                add(){
+                    this.list.push({val:this.str,isA:false});
+                    this.str="";
+                    this.showList=[...this.list];
+                    // console.log(showList);
+                },
+                del(idx){
+                    this.list.splice(idx,1);
+                    this.showList=[...this.list];
+                },
+                change(obj){
+                    obj.isA=!obj.isA;
+                },
+                filter(){
+                    var arr=this.list.filter((obj)=>{
+                        return obj.val.includes(this.str);
+                    })
+                   this.showList=arr;
+                }
+            },
+        })
+    </script>
+</body>
+</html>

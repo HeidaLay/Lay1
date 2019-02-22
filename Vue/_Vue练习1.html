@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        请输入<input type="text" v-model="str" @keyup="filter()">
+        <button @click="add()">点击添加</button>
+        <ul>
+            <li v-for="(obj,index) in showList" :class="{active:obj.isActive}" @click.stop="change(obj)">{{obj.value}}
+                <button @click="del(index)">点击删除</button>
+            </li>
+        </ul>
+    </div>
+    <script src="../Vue/vue.js"></script>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                str:"",
+                list:[
+                    {
+                        value:'aaa',
+                        isActive:false
+                    }
+                ],
+                showList:[
+                    {
+                        value:'aaa',
+                        isActive:false
+                    }
+                ]
+            },
+            methods: {
+                add(){
+                    this.list.push({
+                        value:this.str,
+                        isActive:false,
+                    });
+                    this.str="";
+                    this.showList=[...this.list];
+                },
+                del(index){
+                    this.list.splice(index,1);
+                    this.showList=[...this.list];
+                },
+                change(obj){
+                    // this.isActive=!this.isActive;
+                    obj.isActive=!obj.isActive;
+                },
+                filter(){
+                    var arr=this.list.filter((obj)=>{
+                        return obj.value.includes(this.str);
+                    })
+                    this.showList=arr;
+                }
+            }
+               
+        })
+    </script>
+</body>
+</html>

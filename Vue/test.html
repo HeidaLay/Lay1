@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="app">
+                <input  v-model='str'>
+                <p>{{ getStr }} </p>
+                <button type="button" v-on:click='btnClick' >获取</button>
+            </div>
+     <script src="../Vue/vue.js"></script>
+     <script type="text/javascript">
+        var vm= new Vue({
+                el: '#app',
+                data: {
+                    str: '初始值',
+                    getStr: null,
+                },
+                methods: {
+                    btnClick: function() {
+                        this.getStr = this.str.toUpperCase();
+                    },
+                }
+            })
+        </script>
+</body>
+</html>
