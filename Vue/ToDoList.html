@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+            <h1>todolist</h1>
+            <hr>
+            <div>
+                <label for="proName">名称</label>
+                <input type="text" id="proName" placeholder="请输入产品名" v-model="name">
+                <label for="proPrice">价格</label>
+                <input type="text" id="proPrice" placeholder="请输入产品价格" v-model="price">
+                <button class="add" @click="add()">添加</button>
+            </div>
+            <div>
+                <input type="text" class="search-val" placeholder="请输入搜索内容" v-model="seaVal">
+                <button class="search" @click="search()">搜索</button>
+            </div>
+            <ul>
+                <li v-for="obj in showList">
+                    <input type="checkbox">
+                    <span>{{obj.name}}</span>
+                    <span class="close">[X]</span>
+                    <span class="price">{{obj.price}}</span>
+                </li>
+            </ul>
+            <div>
+                <button class="del" @click="del()">删除选中</button>
+                总价
+                <span class="total_price">100</span>
+            </div>
+        </div>
+    <script src="../Vue/vue.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>

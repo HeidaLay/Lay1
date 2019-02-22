@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        let Welcome = () =>{
+            return (
+                <h1>
+                    welcome
+                    <input type="text" value="" />
+                </h1>
+            )
+        }
+        ReactDOM.render(
+            <Welcome></Welcome>
+            ,document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

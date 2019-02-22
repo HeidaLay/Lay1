@@ -1,0 +1,16 @@
+#div1{
+    /* background: pink; */
+    width: 1000px;
+    height: 800px;
+    background:url(../src/img/111.png) no-repeat;
+    background-size: 100%;
+    margin: 100px auto;
+    font-size: 20px;
+    color: aliceblue;
+    transform: rotate(30deg);
+    border-radius: 5px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}

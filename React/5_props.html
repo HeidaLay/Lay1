@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="div2"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        let Module1=(props)=>{
+            
+               return( 
+                   <div>
+                   <h1>{props.title}</h1>
+                   <h2>{props.content}</h2>
+                   </div>
+               )
+            
+        }
+        ReactDOM.render(<Module1 title="哈哈哈" content="hehehe"></Module1>,document.getElementById('root'))
+        class Module2 extends React.Component{
+                render() {
+                    return(
+                        <div>
+                            <h1>{this.props.title}</h1>
+                            <h2>哈哈哈</h2>
+                            <p>{this.props.desp}</p>
+                            
+                        </div>
+                    )
+                }
+        }
+        ReactDOM.render(<Module2 title="我是标题" desp="我是内容"></Module2>,document.getElementById('div2'))
+    </script>
+</body>
+</html>

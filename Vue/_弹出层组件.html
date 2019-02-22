@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #app{
+            width: 400px;
+            height: 600px;
+            border: 1px black solid;
+            background: goldenrod;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button>注册</button>
+        <button>登录</button>
+    </div>
+    <template id="temp">
+        <div>
+            
+        </div>
+    </template>
+    <script src="../Vue/vue.js"></script>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            methods: {
+                
+            },
+            components:{
+                mydialog:{
+                    template:'3temp',
+                    props:[]
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> 
+    <div id="Main"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+     class Content extends React.Component{
+         constructor(params){
+             super(params);
+             this.state={
+                 Total:100,
+             }
+             this.Add=this.Add.bind(this);
+        }
+         Add(t){
+
+            console.log(t);
+         }
+         render(h) {
+            return(
+                <div>
+                    <h1>剩余士兵数量{this.state.Total}</h1>
+                    <ModuleA Add={this.Add}></ModuleA>
+                    <br></br>
+                    <ModuleB></ModuleB>
+                </div>
+            )   
+         }
+     }
+     class ModuleA extends React.Component{
+         constructor(params){
+             super(params);
+             this.state={
+                 Total1:20,
+                 Rest:0,
+             }
+             this.AddMan=this.AddMan.bind(this)
+         }
+         AddMan(){
+             this.props.Add(this.state.Total1);
+         }
+         render(){
+             return(
+                <div>
+                    <span>将军A有士兵{this.state.Total1}</span>
+                    <button onClick={this.AddMan}>调兵</button>    
+                </div>
+             )
+         }
+    }
+
+    class ModuleB extends React.Component{
+         constructor(params){
+             super(params);
+             this.state={
+                 Total2:30,
+             }
+         }
+         render(){
+             return(
+                <div>
+                    <span>将军B有士兵{this.state.Total2}</span>
+                    <button>调兵</button>    
+                </div>
+             )
+         }
+    }
+    ReactDOM.render(<Content></Content>,document.getElementById('Main'));
+    r
+    </script>
+</body>
+</html>

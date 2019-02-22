@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <Browser>
+        <div>
+            <h1>标题</h1>
+            <p>内容1</p>
+            <p>内容2</p>
+        </div>
+        <div>
+            <h1>结尾</h1>
+        </div>
+        </Browser>
+    </div>
+    <template id="temp">
+        <slot></slot>
+    </template>
+    <script src="../Vue/vue.js"></script>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            components:{
+                "Browser":{
+                    template:"#temp",
+                    
+                }
+            }
+        });
+    </script>
+</body>
+</html>

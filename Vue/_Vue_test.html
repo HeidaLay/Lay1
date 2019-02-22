@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>todolist</h1>
+        <span>名称</span><input type="text" placeholder="请输入产品名" v-model="name">
+        <span>价格</span><input type="text" placeholder="请输入产品价格" v-model="price">
+    <!-- </br> -->
+        <button @click="add()">添加</button>
+        <ul>
+            <li v-for="(obj2,index) in list2"><input type="checkbox">{{obj2.name}} {{obj2.price}}<button @click="del()">删除</button></li>
+        </ul>
+    </div>
+    <script src="../Vue/vue.js"></script>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                list2:[
+                    {
+                        name:'裤子',
+                        price:'199'
+                    },
+                    {
+                        name:'衣服',
+                        price:'129'
+                    },
+                    {
+                        name:'电脑',
+                        price:'3399'
+                    }
+                ],
+                name:'',
+                price:''
+            },
+           methods: {
+               add(){
+                   this.list2.push({
+                       name:this.name,
+                       price:this.price
+                   })
+                   
+               },
+               del(idx){
+                    this.list2.splice(idx,1);
+               }
+           }, 
+
+        })
+    </script>
+</body>
+</html>
