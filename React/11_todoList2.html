@@ -23,59 +23,98 @@
             super(params);
             this.state={
                 list:[
-                  {
-                     name:'吃饭',
-                     isSelect:false,
+                  { 
+                    id:1,
+                    name:'吃饭',
+                    isSelect:false,
                   },
                   {
+                    id:2,  
                     name:'睡觉',
                      isSelect:false,
                   },
                   {
+                    id:3,
                     name:'学习',
                     isSelect:true,
                   }
-                ]
+                ],
+                showlist:[
+                  { 
+                    id:1,
+                    name:'吃饭',
+                    isSelect:false,
+                  },
+                  {
+                    id:2,  
+                    name:'睡觉',
+                     isSelect:false,
+                  },
+                  {
+                    id:3,
+                    name:'学习',
+                    isSelect:true,
+                  }
+                ],
+                
             },
             this.addHandle=this.addHandle.bind(this),
             this.del=this.del.bind(this),
-            this.change=this.change.bind(this)
+            this.change=this.change.bind(this),
+            this.search=this.search.bind(this)
         }
         addHandle(val){
-            console.log(val);
+            // console.log(val);
             let Newlist=[...this.state.list];
             Newlist.push({
               name:val,
-              isSelect:false
+              isSelect:false,
+              id:(new Date()).getTime()
             });
             this.setState({
-              list:Newlist
+              list:Newlist,
+              showlist:Newlist
             })
       
         }  
-        change(index){
-            // console.log(index);
-            let Newlist=[...this.state.list];
-            Newlist[index].isSelect=!Newlist[index].isSelect;
-            this.setState({
-              list:Newlist
+        change(id){
+            // console.log(id);
+            let index=this.state.list.findIndex(function(obj,index) {
+                return obj.id==id
             })
-        }    
-        del(index){ 
-            // console.log(index);
-            let Newlist=[...this.state.list];
-            Newlist.splice(index,1);
+            let newlist=[...this.state.list];
+            newlist[index].isSelect=!newlist[index].isSelect;
             this.setState({
-              list:Newlist
-            })
+              list:newlist,
+              showlist:newlist
+            });
         }    
+        del(id){ 
+            // console.log(id);
+            let newlist=this.state.list.filter((obj)=>{
+                return obj.id!=id;
+            })
+            this.setState({
+              list:newlist,
+              showlist:newlist
+            })
+        }
+        search(val){
+            // console.log(val);
+            let showlist=this.state.list.filter((obj)=>{
+                return obj.name.includes(val);
+            })
+            this.setState({
+               showlist
+            })
+        }
       render() {
         return (
           <div>
                 <h1>todoList</h1>
-                <Search></Search>
+                <Search search={this.search}></Search>
                 <Add addHandle={this.addHandle}></Add>
-                <Show list={this.state.list} change={this.change} del={this.del}></Show>
+                <Show list={this.state.showlist} change={this.change} del={this.del}></Show>
           </div>
         )
       }
@@ -108,7 +147,11 @@
       render() {
         return (
           <div>
-             搜索<input type='text'/>
+             搜索<input type='text' onChange={
+               (e)=>{
+                 this.props.search(e.target.value);
+               }
+             }/>
              <br></br>  
           </div>
         )
@@ -123,14 +166,14 @@
               {
                 this.props.list.map((obj,index)=>{
                     return(
-                      <li key={index} className={obj.isSelect?'active':''}>
+                      <li key={obj.id} className={obj.isSelect?'active':''}>
                            <input type='checkbox' defaultChecked={obj.isSelect} onClick={()=>{
-                              this.props.change(index);
+                              this.props.change(obj.id);
                            }}/> 
                           <span>{obj.name}</span>
                          
                           <button onClick={()=>{
-                              this.props.del(index);
+                              this.props.del(obj.id);
                           }}>删除</button>
                       </li>
                     )
