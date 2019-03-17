@@ -119,6 +119,7 @@ a:hover{
     float: left;
     font-size: 26px;
     padding-right: 100px;
+    line-height: 32px;
 }
 #section ul{
     float: left;
@@ -186,6 +187,7 @@ a:hover{
 }
 #section .first{
     margin-left: 15px;
+    
 }
 #hot-product{
     width: 1220px;
@@ -233,7 +235,7 @@ a:hover{
     width: 1260px;
     height: 425px;
     /*background: yellowgreen;*/
-    float: left;
+    /* float: left; */
     margin-left: 138px;
     overflow: hidden;
 }
@@ -283,4 +285,38 @@ a:hover{
     width: 40px;
     
 }
+#G_watch{
+    width: 1220px;
+    height: 184px;
+    margin: 70px auto;
+}
+
+#phone{
+    width: 100%;
+    border-top: 1px solid #dadee2;
+    float: left;
+    margin-top: 80px;
+}
+#phone ul{
+    width: 1220px;
+    margin: 0 auto;
+}
+#phone li{
+    float: left;
+    padding-left: 110px;
+    padding-right: 160px;
+    margin-top: 30px;
+}
+#phone .select{
+    border-right: 1px solid #e3e6e9;
+}
+#phone p{
+    font-size: 14px;
+    line-height: 30px;
+}
+#footer li{
+    
+}
+
+
 

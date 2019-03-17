@@ -11,16 +11,16 @@ for(var i=0;i<oLi.length;i++){
         oDiv[this.index].className="active img-box";
     }
 }
-setInterval(function(){
-    for(var k=0;k<oLi.length;k++)
-    {
-        oLi[k].onclick();
-        if(k==oLi.length)
-        {
-            k=0;
-        }
-    }
-},3000)
+// setInterval(function(){
+//     for(var k=0;k<oLi.length;k++)
+//     {
+//         oLi[k].onclick();
+//         if(k==oLi.length)
+//         {
+//             k=0;
+//         }
+//     }
+// },3000)
 var Hot_left=document.getElementById("left");
 var Hot_right=document.getElementById("right");
 var Hot_img_box=document.getElementById("hot-img-box");
