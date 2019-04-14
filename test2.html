@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // let str = "hij";
+        // let [o, p] = str;
+        // console.log(o,p);
+
+        // let a3 = ['a','b','c'];
+        // // let a4 = a3;
+        // // a3[0] = 'd';
+        // // console.log(a3,a4);
+
+        // let a5 = [...a3];
+        // a3[0] = 'd';
+        // console.log(a3,a5);
+
+        // var aLi = document.getElementsByTagName('li'); //类数组 数组 节点类别
+        // aLi.push('x');
+        // console.log(aLi);
+        // var arr = [...aLi];
+        // arr.push('dfghj');
+        // console.log(arr);
+        
+        let p1 = {
+            name:'zs',
+            age:20
+        }
+        let p3 = {
+            name:'lis',
+            school:'weichuang'
+        }
+        let p2 = {...p3,...p1};
+        console.log(p2);
+    </script>
+</body>
+</html>

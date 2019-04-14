@@ -1,0 +1,11 @@
+{
+  "name": "package.json",
+  "version": "8.11.3",
+  "description": "",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

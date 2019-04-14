@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <child @showmessage="information"></child>
+      <p>{{infor}}</p>
+    </div>
+    <template id="temp">
+      <div>
+          <button @click='showwords()'>click</button>
+      </div>
+    </template>
+    <script src="./Vue/vue.js"></script>
+    <script>
+      var vm=new Vue({
+        el:'#app',
+        data() {
+          return {
+            // message:"hahaha",
+            infor:''
+          }
+        },
+        methods: {
+          
+          information(message){
+            console.log(message);
+            this.infor=message;
+          }
+        },
+        components:{
+          child:{
+            template:'#temp',
+            data() {
+              return {
+                message:"hahaha",
+              }
+            },
+            methods: {
+              showwords(){
+            this.$emit('showmessage',this.message);
+            console.log('111');
+          },
+            },
+          }
+        }
+      })
+    </script>
+    
+    
+
+</body>
+</html>
