@@ -1,9 +1,0 @@
-{
-  "name": "vue_demo",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-service": "^3.5.0"
-  }
-}
